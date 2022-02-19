@@ -92,8 +92,103 @@ setTimeout(function(){
 	const pageX = window.innerHeight;
 	t.style.translate = 'translateX(' + t.pageX + 'px)';
 	t.style.display = 'none';
-},//16000
-0)
+},16000)
+
+anime.timeline({
+    easing: 'easeInOutSine',
+    autoplay: true,
+    duration: 500,
+    loop: true,
+    // delay: 500,
+    // endDelay: 500,
+ //   update: function(instane) {
+   //   console.log(instane.reversePlayback);
+ //   }
+  })
+  .add({
+    targets: '.pane-01',
+    translateY: [0, '-100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  })
+  .add({
+    targets: '.pane-02',
+    translateY: [0, '100vh'],
+    scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-03',
+    translateY: [0, '-100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-04',
+	translateY: [0, '100vh'],
+    scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-05',
+    translateY: [0, '-100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-06',
+    translateY: [0, '100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-07',
+    translateY: [0, '-100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-08',
+    translateY: [0, '100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-09',
+    translateY: [0, '-100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-10',
+    translateY: [0, '100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-11',
+    translateY: [0, '-100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-12',
+    translateY: [0, '100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-13',
+    translateY: [0, '-100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
+  .add({
+    targets: '.pane-14',
+    translateY: [0, '100vh'],
+	scale: [1, 2],
+    background: '#3333CE',
+  }, '-=500')
 
 
 sal({
@@ -148,8 +243,8 @@ anime.timeline({
 })
 .add({
 	targets: '.ez__swoosh',
-	rotate: '5turn',
-	scale: [0, 1],
+	rotate: '150turn',
+	scale: [1, 2],
 	opacity: [0,1],
 	easing: 'easeOutCubic',
 	complete: function(){
@@ -242,3 +337,6 @@ foot[i].addEventListener('mouseleave', (e) => {
 }, false);
 
 }
+
+
+
