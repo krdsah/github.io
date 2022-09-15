@@ -84,6 +84,7 @@ overflow: scroll;
  right: 0;
  display: flex;
  height: 60px;
+ z-index: 10;
  padding-left: 1.7rem;
  background: none;
  mix-blend-mode: difference;
@@ -95,7 +96,7 @@ overflow: scroll;
  display: flex;
  padding: 0.50rem 4rem 1.5rem 8rem;
 }
-.main__header .flex-nav ul li{
+.main__header .flex-nav ul li {
   display: inline-block;
   margin-right:8px;
   padding: 0 2rem 0 0;
@@ -107,8 +108,10 @@ overflow: scroll;
   font-size: 2rem;
   font-family: var(--fjalla);
   position:  relative;
+  z-index: 2;
+	cursor: pointer;
 }
-.main__header .flex-nav ul li:after{
+.main__header .flex-nav ul li:after {
  content: attr(data-text);
  display: block;
  position: absolute;
@@ -118,18 +121,23 @@ overflow: scroll;
  -webkit-text-fill-color: initial;
  left:12px;
  z-index:-1;
- color: #666
+ cursor: pointer;
+ color: #666;
+ transition: 0.5s;
 }
-.main__header .flex-nav ul li:hover:after{
+.main__header .flex-nav ul li:hover:after {
  left:0;
- transform: perspective(500px) translateX(100rem) scale(1, 5);
+ transform: perspective(500px) translateX(10rem);
+ font-size: 600px;
+ z-index: 1000;
  bottom: 12px;
  right: 110%;
  color: red;
  box-shadow: 0 0 15px rgba(255,0,0,.4);
- transition: all 2s linear
+ transition-delay: 0.5s;
 }
-.main__header .flex-nav ul li a{
+.main__header .flex-nav ul li a {
+	cursor: pointer;
   color: var(--white-color);
   text-decoration: none;
   mix-blend-mode: difference;
@@ -193,7 +201,7 @@ overflow: scroll;
 	padding-left: 4rem;
 }
 .my__intro .left .snippet {
-	margin: 1rem 1rem 1rem 2rem;
+	margin: 1rem 1rem 1rem 4rem;
 	color: transparent;
     -webkit-text-fill-color: transparent;
 	-webkit-text-stroke: 2px var(--white-color);
@@ -215,9 +223,19 @@ overflow: scroll;
 45deg, #0D2EFD, transparent
 ), url(../img/bg.jpg) no-repeat 0 0;
  	background-size: cover, contain;
-	width: 40%;
+	margin-top: -4rem;
+	margin-left: -4rem;
+	width: 400px;
+	height: 500px;
+	perspective: 1000px;
+	transform: rotate(45deg);
 	mix-blend-mode: screen;
-    flex-grow: 2
+	transition: transform 0.5s;
+}
+
+.my__intro .right:hover {
+	
+	transform: rotate(345deg) translateX(-105px);
 }
 .my__intro .right .snippet {
     padding-left:0;
@@ -249,18 +267,21 @@ overflow: scroll;
 	-webkit-text-stroke: initial;
 	text-stroke: initial;
 	color: #1141FE;
+	cursor: pointer;
 	mix-blend-mode: screen;
-    font-size: 500px;
+    font-size: 400px;
 	margin-right: 2rem;
 	font-family: var(--mixal);
+	transition: 0.5s;
 }
 .my__intro .font__change:hover{
-	transition: all 0s linear;
+	cursor: pointer;
 	-webkit-text-fill-color: transparent;
 	-webkit-text-stroke: 4px #fff;
 	text-stroke: 6px #fff;
 	color: yellow;
-	mix-blend-mode: screen
+	mix-blend-mode: screen;
+	transition-delay: 0.2s;
 }
 
 
@@ -455,7 +476,7 @@ transform: rotate(360deg);
   font-weight: bold;
   font-size: 180px;
   letter-spacing: 1px;
-  color: #fff
+  color: #8bff07
 }
 .section__intro:nth-child(even) p {
     padding-right: 0rem;
@@ -593,7 +614,7 @@ ____________________________________________________________*/
 .popupMenu__link {
   text-decoration: none;
   font-family: var(--mixal);
-  font-size: 11rem;
+  font-size: 4rem;
   font-weight: bold;
   letter-spacing: 3px;
   color: var(--white-color);
@@ -1086,9 +1107,11 @@ ____________________________________________________________*/
 }
 
 .my__intro .font__change{
+	cursor: pointer;
     font-size: 250px;
 }
 .my__intro .font__change:after{
+	cursor: pointer;
 	font-size: 18px;
 	display: block;
 	margin-right: 6rem;
@@ -1148,6 +1171,7 @@ ____________________________________________________________*/
 .section__intro .thumb .thumbnail{
   width: 300px;
   height: 300px;
+  cursor: pointer;
 }
 .section__intro h2 {
   padding-top: 0rem;

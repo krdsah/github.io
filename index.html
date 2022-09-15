@@ -10,8 +10,8 @@
 
 <link rel="stylesheet" href="css/style.css"/>
 <link rel="stylesheet" href="css/sal.css"/>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8103047752417928"
-     crossorigin="anonymous"></script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8103047752417928"
+     crossorigin="anonymous"></script> -->
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 <div class="mainBox">
 <h1 class="myText">
   <span class="text-wrapper">
-    <span class="letters">MY PORTFOLIO</span>
+    <span class="letters">LEGIONHIDDENS4</span>
   </span>
 </h1>
 </div>
@@ -79,10 +79,6 @@
 	</div>
 </div>
 
-<!--	<div class="ez__lock">
-		<div class="locks"> INDRAMAYU Dev</div>
-		<div class="locks"> Indramayu Dev</div> -->
-	
 	
 	</div>
 <div data-sal="slide-down" data-sal-delay="1000" data-sal-duration="1500" class="anim__text">
@@ -271,6 +267,71 @@ Owned by M'Lutfi Abdul Aziz</p><br>
 	<script src="js/sal.js"></script>
 
   <script src="js/krdsah.js"></script>
+  <script>
+    var dragItem = document.querySelector(".right");
+    var container = document.querySelector(".my__intro");
+
+    var active = false;
+    var currentX;
+    var currentY;
+    var initialX;
+    var initialY;
+    var xOffset = 0;
+    var yOffset = 0;
+
+    container.addEventListener("touchstart", dragStart, false);
+    container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
+
+    container.addEventListener("mousedown", dragStart, false);
+    container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);
+
+    function dragStart(e) {
+      if (e.type === "touchstart") {
+        initialX = e.touches[0].clientX - xOffset;
+        initialY = e.touches[0].clientY - yOffset;
+      } else {
+        initialX = e.clientX - xOffset;
+        initialY = e.clientY - yOffset;
+      }
+
+      if (e.target === dragItem) {
+        active = true;
+      }
+    }
+
+    function dragEnd(e) {
+      initialX = currentX;
+      initialY = currentY;
+
+      active = false;
+    }
+
+    function drag(e) {
+      if (active) {
+      
+        e.preventDefault();
+      
+        if (e.type === "touchmove") {
+          currentX = e.touches[0].clientX - initialX;
+          currentY = e.touches[0].clientY - initialY;
+        } else {
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+        }
+
+        xOffset = currentX;
+        yOffset = currentY;
+
+        setTranslate(currentX, currentY, dragItem);
+      }
+    }
+
+    function setTranslate(xPos, yPos, el) {
+      el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    }
+  </script>
   
 
 	
